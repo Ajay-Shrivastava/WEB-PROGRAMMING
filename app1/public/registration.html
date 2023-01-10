@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function register() {
+            localStorage.setItem("username", document.getElementById("username").value );
+            localStorage.setItem("password", document.getElementById("password").value );
+            window.location.href = "/";
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <form align="center" style="padding: 100px; text-align: center; margin: auto; display: table;">
+        Register Now
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" onclick="register()">SignUp</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

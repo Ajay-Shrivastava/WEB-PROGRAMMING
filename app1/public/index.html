@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function auth() {
+            if(document.getElementById("username").value === localStorage.getItem("username")) {
+                if(document.getElementById("password").value === localStorage.getItem("password")) {
+                    window.location.href = "/dashboard";
+                }
+                else 
+                alert("Invalid Password");
+            }
+            else 
+            alert("invalid username");
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <div style="background-color: lightblue; padding: 10px;">
+        <header><span style="font-size: 80px; font-weight: bolder;">Welcome to application</span></header>
+    </div>
+    <div style="display: flex;">
+        <div style="margin-left: 250px;">
+            <img style="width: 600px ;" src="https://media.istockphoto.com/id/1327913727/photo/photographer-landscape-nature-outdoor-hat-during-mist-sunrise-relax-and-freedom-day-lifestyle.jpg?b=1&s=170667a&w=0&k=20&c=n68sWExeAXKc9Nho4ogGflJ7ItTkVev5300o72fWzxo=" alt="" srcset="">
+        </div>
+        <div style="padding: 100px ;">
+            <form >
+                <table>
+                    <tr>
+                        <td><input type="text" name="username" id="username" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" name="password" id="password" required></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" onclick="auth()">LogIn</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/registration">Register Now</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <div style="background-color: lightblue; position: fixed; bottom: 0%; text-align: center; padding: 10px;width: 97.8%;">
+        <footer>All rights reserved</footer>
+    </div>
+</body>
+</html>
