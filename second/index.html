@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script>
+        var arr = [];
+        function addobj() {
+            var name = document.getElementById("name").value;
+            var count = name.length;
+            if(count > 6) {
+                alert("Name must contains less than 6 character");
+            }
+            else {
+            var obj = {
+                "name" : document.getElementById("name").value,
+                "address" : document.getElementById("address").value,
+                "hobby" : document.getElementById("hobby").value
+            }
+            arr.push(obj);
+            alert("data added");
+        }
+        }
+
+        function display() {
+            document.getElementById("result").innerHTML = "";
+            for(var i=0; i<arr.length; i++) {
+                document.getElementById("result").innerHTML += "NAME : "+arr[i].name+", Address : "+arr[i].address+", Hobby : "+arr[i].hobby+"</br>";
+            }
+        }
+        
+    </script>
+</head>
+<body>
+<div id="page">
+    Name : <input type="text" name="" id="name"> <br><br>
+    Address : <input type="text" name="" id="address"> <br><br>
+    Hobbies : <input type="text" name="" id="hobby"> <br><br>
+    <button onclick="addobj()">Add Object</button> &nbsp; <button onclick="display()" id="displaybtn">Display Object</button>
+    <br><br><br>
+    <div id="result">
+
+    </div>
+</div>
+</body>
+
+<script>
+    $("#name").focus(function(){
+                $(this).css("background-color","yellow")
+            })
+
+    $("#name").blur(function(){
+                $(this).css("background-color","white")
+    })
+
+    $("#displaybtn").click(function(event) {
+        $("#page").css({
+            "background-color" : "red"
+        })
+    })
+            
+</script>
+
+</html>
